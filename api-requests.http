@@ -1,0 +1,105 @@
+### Create a transaction
+POST http://localhost:8080/v1/transactions
+Content-Type: application/json
+
+{
+  "description": "Lunch at hawker center",
+  "amount": 5.50,
+  "transactionDate": "2026-02-13T12:30:00",
+  "category": "Food",
+  "type": "EXPENSE"
+}
+
+### Get all transactions
+GET http://localhost:8080/v1/transactions
+
+### Get transaction by ID
+GET http://localhost:8080/v1/transactions/1
+
+### Delete transaction by ID
+DELETE http://localhost:8080/v1/transactions/1
+
+### Create a transaction
+POST http://localhost:8080/v1/transactions
+Content-Type: application/json
+
+{
+  "description": "Dinner with babe",
+  "amount": 80.23,
+  "transactionDate": "2026-02-13T12:35:00",
+  "category": "Food",
+  "type": "EXPENSE"
+}
+
+### Create a transaction
+POST http://localhost:8080/v1/transactions
+Content-Type: application/json
+
+{
+  "description": "Salary",
+  "amount": 7000,
+  "transactionDate": "2026-02-13T12:30:00",
+  "category": "Salary Credit",
+  "type": "INCOME"
+}
+
+### Create a transaction
+POST http://localhost:8080/v1/transactions
+Content-Type: application/json
+
+{
+  "description": "Lunch at hawker center",
+  "amount": 4.2,
+  "transactionDate": "2026-02-13T12:30:00",
+  "category": "Food",
+  "type": "EXPENSE"
+}
+
+### Create a transaction
+POST http://localhost:8080/v1/transactions
+Content-Type: application/json
+
+{
+  "description": "Lunch at hawker center",
+  "amount": 5.50,
+  "transactionDate": "2026-02-13T12:30:00",
+  "category": "Food",
+  "type": "EXPENSE"
+}
+
+### Update a transaction
+PUT http://localhost:8080/v1/transactions/1
+Content-Type: application/json
+
+{
+  "amount": 100,
+  "transactionDate": "2026-03-13T12:00:00",
+  "description": "Test put request",
+  "category": "Food",
+  "type": "EXPENSE"
+}
+
+### Update a transaction
+PUT http://localhost:8080/v1/transactions/1
+Content-Type: application/json
+
+{
+"description": "Changed description",
+"amount": 999.99,
+"transactionDate": "2026-02-14T10:00:00",
+"category": "Updated Category",
+"type": "INCOME",
+"notes": "Some notes"
+}
+
+### Updating a non existent transaction
+PUT http://localhost:8080/v1/transactions/9999
+Content-Type: application/json
+
+{
+  "description": "Test",
+  "amount": 10,
+  "transactionDate": "2026-02-14T10:00:00",
+  "category": "Test",
+  "type": "EXPENSE"
+}
