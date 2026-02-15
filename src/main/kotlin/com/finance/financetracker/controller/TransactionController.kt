@@ -2,6 +2,7 @@ package com.finance.financetracker.controller
 
 import com.finance.financetracker.entity.Transaction
 import com.finance.financetracker.service.TransactionService
+import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -28,7 +29,7 @@ class TransactionController(
 
     @PostMapping
     fun createTransaction(
-        @RequestBody transaction: Transaction
+        @Valid @RequestBody transaction: Transaction
     ): ResponseEntity<Transaction> {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(
@@ -55,7 +56,7 @@ class TransactionController(
     @PutMapping("/{id}")
     fun updateTransaction(
         @PathVariable("id") id: Long,
-        @RequestBody transaction: Transaction
+        @Valid @RequestBody transaction: Transaction
     ): ResponseEntity<Transaction> {
         val existingTransaction = transactionService.getTransactionById(id)
             ?: return ResponseEntity.notFound().build()
